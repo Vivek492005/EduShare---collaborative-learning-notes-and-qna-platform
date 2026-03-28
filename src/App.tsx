@@ -13,28 +13,54 @@ import NewsPage from "./pages/NewsPage.tsx";
 import DashboardPage from "./pages/DashboardPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
+import { AuthProvider } from "@/hooks/useAuth";
+import LoginPage from "./pages/LoginPage";
+
+import PageTransitions from "@/components/layout/PageTransitions";
+import { AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
+
+const MainRoutes = () => {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransitions><Index /></PageTransitions>} />
+        <Route path="/notes" element={<PageTransitions><NotesPage /></PageTransitions>} />
+        <Route path="/discussions" element={<PageTransitions><DiscussionsPage /></PageTransitions>} />
+        <Route path="/groups" element={<PageTransitions><GroupsPage /></PageTransitions>} />
+        <Route path="/papers" element={<PageTransitions><PapersPage /></PageTransitions>} />
+        <Route path="/news" element={<PageTransitions><NewsPage /></PageTransitions>} />
+        <Route path="/dashboard" element={<PageTransitions><DashboardPage /></PageTransitions>} />
+        <Route path="*" element={<PageTransitions><NotFound /></PageTransitions>} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <AppLayout>
+    <AuthProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter basename="/EduShare---collaborative-learning-notes-and-qna-platform/">
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/notes" element={<NotesPage />} />
-            <Route path="/discussions" element={<DiscussionsPage />} />
-            <Route path="/groups" element={<GroupsPage />} />
-            <Route path="/papers" element={<PapersPage />} />
-            <Route path="/news" element={<NewsPage />} />
-            <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route
+              path="/*"
+              element={
+                <AppLayout>
+                  <MainRoutes />
+                </AppLayout>
+              }
+            />
           </Routes>
-        </AppLayout>
-      </BrowserRouter>
-    </TooltipProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 

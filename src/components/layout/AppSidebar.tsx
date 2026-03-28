@@ -48,13 +48,13 @@ export function AppSidebar() {
 
   return (
     <Sidebar collapsible="icon" className="border-r border-border/50">
-      <SidebarHeader className="p-4">
+      <SidebarHeader className="p-6">
         <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-xl gradient-primary flex items-center justify-center shrink-0">
-            <GraduationCap className="h-5 w-5 text-primary-foreground" />
+          <div className="h-9 w-9 rounded-xl gradient-primary flex items-center justify-center shrink-0 glow-sm shadow-lg shadow-primary/20">
+            <BookOpen className="h-5 w-5 text-primary-foreground" />
           </div>
           {!collapsed && (
-            <span className="font-display text-xl font-bold gradient-text">EduSphere</span>
+            <span className="font-display text-2xl font-bold gradient-text tracking-tight">EduShare</span>
           )}
         </div>
       </SidebarHeader>

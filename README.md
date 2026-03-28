@@ -1,6 +1,6 @@
-# 📚 EduSphere – Student Notes Sharing & Discussion Platform
+# 📚 EduShare – Student Notes Sharing & Discussion Platform
 
-EduSphere is a **cloud-native, scalable student collaboration platform** built using a serverless architecture powered by Firebase. It enables students to share notes, solve doubts, and collaborate in real time without managing traditional backend servers. The platform uses cloud services like Authentication, Firestore Database, and Storage for seamless data handling and real-time interaction. Deployed on Firebase Hosting with global CDN support, EduSphere ensures high availability, fast performance, and secure access. Its architecture supports scalability, low latency, and cost-efficient deployment, making it an ideal modern EdTech solution.
+EduShare is a **cloud-native, scalable student collaboration platform** built using a serverless architecture powered by Firebase. It enables students to share notes, solve doubts, and collaborate in real time without managing traditional backend servers. The platform uses cloud services like Authentication, Firestore Database, and Storage for seamless data handling and real-time interaction. Deployed on GitHub Pages with global CDN support, EduShare ensures high availability, fast performance, and secure access. Its architecture supports scalability, low latency, and cost-efficient deployment, making it an ideal modern EdTech solution.
 
 ---
 
@@ -166,3 +166,25 @@ This project is licensed under the MIT License.
 ## ⭐ Support
 
 If you like this project, give it a ⭐ and share it!
+=======
+# EduShare - Collaborative Learning & QnA Platform
+
+EduShare is a modern platform designed for students to share notes, participate in discussions, and collaborate effectively.
+
+## Features
+- **Notes Library**: Browse and share study materials across various subjects and semesters.
+- **QnA Center**: Get your doubts cleared by the community.
+- **Study Groups**: Form groups and study together.
+- **Dashboard**: Track your progress and contributions.
+
+## Tech Stack
+- React + Vite
+- TypeScript
+- Tailwind CSS
+- Firebase (Authentication, Firestore, Storage)
+- Lucide React (Icons)
+- Framer Motion (Animations)
+
+## Deployment
+Hosted on GitHub Pages at: [https://Vivek492005.github.io/EduShare---collaborative-learning-notes-and-qna-platform/](https://Vivek492005.github.io/EduShare---collaborative-learning-notes-and-qna-platform/)
+
