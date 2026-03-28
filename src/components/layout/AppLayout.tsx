@@ -5,6 +5,7 @@ import { Search, Bell, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 import { 
   DropdownMenu, 
   DropdownMenuContent, 
@@ -17,6 +18,7 @@ import {
 export function AppLayout({ children }: { children: React.ReactNode }) {
   const [isDark, setIsDark] = useState(true);
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
@@ -95,7 +97,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <Button variant="hero" size="sm" className="rounded-xl px-6" onClick={() => window.location.href = "/login"}>
+                <Button variant="hero" size="sm" className="rounded-xl px-6" onClick={() => navigate("/login")}>
                   Login
                 </Button>
               )}
